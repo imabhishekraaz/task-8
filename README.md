@@ -1,2 +1,0 @@
-USERNAME=ffabhishek116_db_user
-PASSWORD=Abhishekraj
