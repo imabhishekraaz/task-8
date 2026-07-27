@@ -4,6 +4,7 @@ const { mongoDB } = require('./src/configs/db');
 
 const dns = require('dns');
 const { taskRouter } = require('./src/routes/task.route');
+const { userRouter } = require('./src/routes/user.route');
 
 dns.setServers(["1.1.1.1", "8.8.8.8"])
 
@@ -17,6 +18,7 @@ app.use(express.urlencoded({ extended: true }));
 mongoDB();
 
 // Handle the diffent routes
+app.use('/api', userRouter)
 app.use('/api', taskRouter)
 
 app.listen(4000, () => {

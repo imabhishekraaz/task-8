@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const userMiddleware = require('./../middleware/user.middleware')
 
 // create a user Scheme for creating a user
 const userScheme = new mongoose.Schema({
@@ -8,15 +9,11 @@ const userScheme = new mongoose.Schema({
     },
     password: {
         type: String,
-        required: true
+        required: true,
+        
     },
     email: {
         type: String,
-        required: true,
-        unique: true
-    },
-    phoneNumber: {
-        type: Number,
         required: true,
         unique: true
     },
@@ -26,8 +23,10 @@ const userScheme = new mongoose.Schema({
     }
 });
 
+userScheme.pre('save', userMiddleware.hashPassword);
+
 // create a model "user"
-const user = mongoose.model("user", userScheme);
+const userModel = mongoose.model("user", userScheme);
 module.exports = {
-    user
+    userModel
 }
