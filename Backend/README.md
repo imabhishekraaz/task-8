@@ -32,7 +32,104 @@ install dependencies
 npm install
 ```
 
-run the application
+run the backend
 ```bash
-npm run dev
+npm run start
 ```
+
+---
+
+## Envirnment variables
+
+create '.env' file
+
+```env
+PORT=5000
+
+MONGODB_URI=mongodb://localhost:27017/taskdb
+
+JWT_SECRET=your_secret_key
+
+JWT_EXPIRE=7d
+```
+add own mongodb url
+
+---
+
+# API Endpoints
+
+## Authentication
+
+### Register
+
+```
+POST - 'api/user/signup'
+```
+### Login
+
+```
+POST - 'api/user/login'
+```
+
+---
+
+## Task
+
+### Add task
+
+```
+POST - 'api/user/task'
+```
+
+### update task
+
+```
+PUT - 'api/user/task/:id'
+```
+
+### delete task
+
+```
+DELETE - 'api/user/task/:id'
+```
+
+### get all task
+
+```
+GET - 'api/user/tasks'
+```
+
+---
+
+## Authentication
+
+Pass JWT Token
+
+```
+Authorization: Bearer <token>
+```
+
+---
+
+## Example Response
+
+```json
+{
+    "success": true,
+    "message": "Task created successfully"
+}
+```
+
+---
+
+## Author
+
+**Abhishek Raj**
+
+GitHub:[github](https://github.com/imabhishekraaz)
+
+
+LinkedIn:[LinkedIn](https://www.linkedin.com/in/abhishekraz/)
+
+
+
