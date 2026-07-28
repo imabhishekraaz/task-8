@@ -1,0 +1,173 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main-wrapper {
+    width: 100vw;
+    min-height: 100vh;
+    --primary-font: Arial, Helvetica, sans-serif;
+    --primary-color: hsl(0, 0%, 17%);
+    --secondary-color: rgba(0, 0, 0, 0.7);
+    --input-color: hsl(0, 0%, 83%);
+    font-family: var(--primary-font);
+    color: var(--secondary-color);
+}
+
+/* Header section */
+.header-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center; /* Fixed: Added to center text alignment inside container */
+    margin-top: 50px;
+}
+
+.create-account h1 {
+    font-size: 35px;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.header-paragraph {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-paragraph p {
+    width: 80%;
+    font-weight: bold;
+    color: var(--secondary-color);
+}
+
+/* Sign up form */
+.form-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-inner-wrapper {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr 1fr;
+    width: 85%;
+    margin-bottom: 15px;
+}
+
+.form-inner-wrapper input {
+    width: 100%;
+    border-radius: 10px;
+    height: 3.5rem;
+    border: 2px solid transparent; /* Added: Prevents layout shifting on focus border activation */
+    outline: none;
+    padding-left: 10px;
+    background-color: var(--input-color);
+    font-weight: bold;
+    color: var(--secondary-color);
+}
+
+.form-inner-wrapper input:focus {
+    border: 2px solid var(--primary-color);
+}
+
+.option-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+#gender {
+    width: 100%;
+    padding: 1rem 0.5rem;
+    background-color: var(--input-color);
+    border-radius: 10px;
+    outline: none;
+    border: 2px solid transparent; /* Added: Prevents layout shifting on focus border activation */
+    font-weight: bold;
+    color: var(--secondary-color);
+}
+
+#gender:focus {
+    border: 2px solid var(--primary-color);
+}
+
+#gender option {
+    background-color: #f2d6d6; /* Fixed: Replaced unrenderable RGBA with solid Hex value */
+    color: black;
+}
+
+.email-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 15px;
+    gap: 15px;
+}
+
+.email-wrapper input {
+    width: 85%;
+    height: 3.5rem;
+    padding-left: 10px;
+    border: 2px solid transparent; /* Added: Prevents layout shifting on focus border activation */
+    outline: none;
+    background-color: var(--input-color);
+    border-radius: 10px;
+    font-weight: bold;
+    color: var(--secondary-color);
+}
+
+.email-wrapper input:focus {
+    border: 2px solid var(--primary-color);
+}
+
+.signup-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.signup-button button {
+    width: 85%;
+    background-color: var(--primary-color);
+    font-weight: bold;
+    font-size: 15px;
+    height: 3.5rem;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    color: white;
+    margin-bottom: 40px;
+    cursor: pointer;
+}
+
+.account-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 30px;
+    cursor: pointer;
+}
+
+/* Google, Apple, Facebook option icons */
+.icons {
+    display: flex;
+    gap: 20px;
+}
+
+.icons .icon {
+    background-color: var(--input-color);
+    border-radius: 15px;
+    padding: 13px;
+    color: black;
+    font-size: 25px;
+    cursor: pointer; /* Fixed: Removed duplicate entry */
+}

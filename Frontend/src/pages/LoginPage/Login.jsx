@@ -24,7 +24,7 @@ const Login = () => {
                                 <input type="password" name="password" id="password" placeholder='Password' required />
                             </div>
                             <div className='signin'>
-                                 <a href="#">Forgot your password?</a>
+                                <a href="#">Forgot your password?</a>
 
                                 <button type="submit">Signin</button>
                             </div>

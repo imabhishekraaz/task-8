@@ -1,0 +1,47 @@
+:root {
+    --primary-font:Arial, Helvetica, sans-serif;
+    --primary-color:  hsl(0, 0%, 17%);
+    --seconday-color: rgba(0, 0, 0, 0.7);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 15px;
+    font-family: var(--primary-font);
+}
+
+.main-container {
+    position: sticky;
+    top: 0;
+    left: 0;
+    height: 40px;
+}
+
+.main-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 15px 15px;
+    align-items: center;
+}
+
+.icon .icon {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    color: var(--seconday-color);
+}
+
+.page-name h2{
+    font-weight: 500;
+    color: var(--seconday-color);
+}
+
+.icon .icon-2 {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    color: var(--seconday-color);
+}

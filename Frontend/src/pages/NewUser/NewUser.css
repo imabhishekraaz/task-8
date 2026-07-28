@@ -1,79 +1,76 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: white;
 }
-:root{
+
+:root {
     --main-font: Arial, Helvetica, sans-serif;
-    --primary-color: #c74040;
-}
-.main-container {
-    display: flex;
-    flex-direction: column;
-    width: 100vw;
-    height: 100vh;
+    --primary-color: hsl(0, 0%, 17%);
 }
 
-.main-wrapper {
-    display: flex;
-    height: 100%;
-    flex-direction: column;
-    gap: 4rem;
-}
+@media (width<720px) {
+    .main-container {
+        display: flex;
+        flex-direction: column;
+    }
 
-/* image wrapper */
-.img-wrapper {
-    text-align: center;
-    margin: 20px;
-}
-/* main heading wrapper */
-.heading-wrapper {
-    text-align: center;
-    display: flex;
-    justify-content: center;
-}
+    .main-wrapper {
+        display: flex;
+        flex-direction: row;
+        gap: 4rem;
+    }
 
-.heading-wrapper h1 {
-    font-family: var(--main-font);
-    font-family: 500;
-    width: 80%;
-    color: var(--primary-color);
-    line-height: 130%;
-}
+    /* image wrapper */
+    .img-wrapper {
+        text-align: center;
+        margin: 20px;
+    }
 
-/* heading - paragraph */
-.paragraph {
-    margin-top: 15px;
-}
-.paragraph p {
-    font-family: var(--main-font);
-    font-weight: 500;
-    width: 85%;
-}
+    /* main heading wrapper */
+    .heading-wrapper {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+    }
 
-/* Login and Register button */
-/* .button-wrapper {
-    display: flex;
-    flex-direction: row;
-    background-color: green;
-} */
-.main-button-wrapper {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    margin-top: 40px;
-}
-.main-button-wrapper button{
-    width: 8rem;
-    background-color: var(--primary-color);
-    height: 3rem;
-    font-size: 1rem;
-    font-family: var(--main-font);
-    font-weight: 550;
-    color: white;
-    border-radius: 9px;
-    outline: none;
-    box-shadow: none;
-    border: none;
+    .heading-wrapper h1 {
+        font-family: var(--main-font);
+        font-family: 500;
+        width: 80%;
+        color: var(--primary-color);
+        line-height: 130%;
+    }
+
+    /* heading - paragraph */
+    .paragraph {
+        margin-top: 15px;
+    }
+
+    .paragraph p {
+        font-family: var(--main-font);
+        font-weight: 500;
+        width: 85%;
+    }
+
+    .main-button-wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin-top: 40px;
+    }
+
+    .main-button-wrapper button {
+        width: 8rem;
+        background-color: var(--primary-color);
+        height: 3rem;
+        font-size: 1rem;
+        font-family: var(--main-font);
+        font-weight: 550;
+        color: white;
+        border-radius: 9px;
+        outline: none;
+        box-shadow: none;
+        border: none;
+    }
 }
