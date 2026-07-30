@@ -8,7 +8,7 @@ import { logoApple, logoFacebook, logoGoogle } from 'ionicons/icons';
 const Register = () => {
   return (
     <>
-      <div className='main-wrapper'>
+      <div className='mains-wrapper'>
         <div>
           <div className='header-wrapper'>
             <div className='create-account'>

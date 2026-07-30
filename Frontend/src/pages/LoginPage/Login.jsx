@@ -8,7 +8,7 @@ const Login = () => {
     return (
         <>
             <div className='page-container'>
-                <div className='main-wrapper'>
+                <div className='mains-wrapper'>
                     <div className='header-wrapper'>
                         <div className='heading-container'>
                             <h1>Login here</h1>

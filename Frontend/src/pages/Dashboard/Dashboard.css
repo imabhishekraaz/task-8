@@ -1,8 +1,9 @@
 :root {
     --primary-font:Arial, Helvetica, sans-serif;
     --primary-color:  hsl(0, 0%, 17%);
-    --seconday-color: rgba(0, 0, 0, 0.7);
-    --background-color: hsl(0,0,95%);
+    --secondary-color: rgba(0, 0, 0, 0.1);
+    --background-color: hsl(0, 0%, 17%);
+    --left-padding: 20px;
 }
 
 *{
@@ -11,5 +12,106 @@
     box-sizing: border-box;
     font-size: 15px;
     font-family: var(--primary-font);
-    background-color: var(--background-color);
+    
+}
+
+@media (width <768px) {
+    .page-wrapper {
+        padding-top: 15px;
+    }
+
+    /* greet-wrapper */
+    .greet-wrapper {
+        padding-left: var(--left-padding);
+    }
+    /* username-wrapper */
+    .username-wrapper h1 {
+        font-family: var(--primary-font);
+        font-weight: 600;
+        font-size: 20px;
+        color: var(--primary-color);
+    }
+    .date p {
+        font-size: 10px;
+        font-family: var(--primary-font);
+        line-height: 20px;
+        font-weight: 600;
+        color: var(--primary-color);
+    }
+
+    /* category-wrapper */
+    .todo p {
+        font-size: 20px;
+        font-family: var(--primary-font);
+        font-weight: 600;
+    }
+    .category-wrapper {
+        padding: var(--left-padding);
+    }
+    .category-inner-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    @scope (.category-inner-wrapper .span) {
+        background-color: var(--background-color);
+        border-radius: 10px;
+        padding: 10px;
+        box-shadow: -3px 0px 5px black;
+        
+        .icon-wrapper .icon {
+            width: 30px;
+            height: 30px;
+            /* padding-left: 10px; */
+            color: white;
+        }
+        p{
+            font-size: 15px;
+            color: white;
+        }
+        .time {
+            font-size: 10px;
+            line-height: 20px;
+        }
+        .total-task {
+            display: flex;
+            justify-content: space-between;
+        }
+        .total-task .icon {
+            color: white;
+        }
+    }
+
+    /* task-wrapper */
+    .task-wrapper {
+        padding: var(--left-padding);
+    }
+    .today p {
+        font-size: 20px;
+        font-family: var(--primary-font);
+        font-weight: 600;
+        color: var(--primary-color);
+        margin-bottom: 10px;
+    }
+    .tasks {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        background-color: var(--background-color);
+        padding: 10px;
+        border-radius: 10px;
+    }
+    .task-span {
+        display: flex;
+        gap: 5px;
+    }
+    .task-span label {
+        color: white;
+        user-select: none;
+    }
+    input[type="radio"]:checked + label {
+        font-weight: bold;
+    }
 }

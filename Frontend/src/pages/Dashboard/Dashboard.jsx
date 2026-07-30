@@ -13,98 +13,98 @@ const Dashboard = () => {
   return (
     <>
       <div>
-        <div>
-          <div>
-            <div>
+        <div className='page-wrapper'>
+          <div className='greet-wrapper'>
+            <div className='username-wrapper'>
               <h1>Good Morning, Abhishek Raj</h1>
             </div>
-            <div>
-              {dayName} {dateNum} {month}
+            <div className='date'>
+              <p>{dayName} {dateNum} {month}</p>
             </div>
           </div>
-          <div>
-            <div>
+          <div className='category-wrapper'>
+            <div className='todo'>
               <p>To Do</p>
             </div>
-            <div>
-              <div>
-                <div>
-                  <IonIcon icon={bagHandleOutline} />
+            <div className='category-inner-wrapper'>
+              <div className='span'>
+                <div className='icon-wrapper'>
+                  <IonIcon className='icon' icon={bagHandleOutline} />
                 </div>
                 <p>Work</p>
-                <p>15 Aug (10:10 AM)</p>
-                <div>
+                <p className='time'>15 Aug (10:10 AM)</p>
+                <div className='total-task'>
                   <p>0/8</p>
-                  <IonIcon icon={ellipseOutline} />
+                  <IonIcon className='icon' icon={ellipseOutline} />
                 </div>
               </div>
-              <div>
-                <div>
-                  <IonIcon icon={personOutline} />
+              <div className='span'>
+                <div className='icon-wrapper'>
+                  <IonIcon className='icon' icon={personOutline} />
                 </div>
                 <p>Personal</p>
-                <p>15 Aug (10:10 AM)</p>
-                <div>
+                <p className='time'>15 Aug (10:10 AM)</p>
+                <div className='total-task'>
                   <p>0/8</p>
-                  <IonIcon icon={ellipseOutline} />
+                  <IonIcon className='icon' icon={ellipseOutline} />
                 </div>
               </div>
-              <div>
-                <div>
-                  <IonIcon icon={peopleOutline} />
+              <div className='span'>
+                <div className='icon-wrapper' >
+                  <IonIcon className='icon' icon={peopleOutline} />
                 </div>
                 <p>Family</p>
-                <p>15 Aug (10:10 AM)</p>
-                <div>
+                <p className='time'>15 Aug (10:10 AM)</p>
+                <div className='total-task'>
                   <p>0/8</p>
-                  <IonIcon icon={ellipseOutline} />
+                  <IonIcon className='icon' icon={ellipseOutline} />
                 </div>
               </div>
-              <div>
-                <div>
-                  <IonIcon icon={barbellOutline} />
+              <div className='span'>
+                <div className='icon-wrapper'>
+                  <IonIcon className='icon' icon={barbellOutline} />
                 </div>
                 <p>Sport</p>
-                <p>15 Aug (10:10 AM)</p>
-                <div>
+                <p className='time'>15 Aug (10:10 AM)</p>
+                <div className='total-task'>
                   <p>0/8</p>
-                  <IonIcon icon={ellipseOutline} />
+                  <IonIcon  className='icon' icon={ellipseOutline} />
                 </div>
               </div>
             </div>
           </div>
-          <div>
-            <div>
+          <div className='task-wrapper'>
+            <div className='today'>
               <p>Today</p>
             </div>
-            <div>
-              <div>
+            <div className='tasks'>
+              <div className='task-span'>
                 <input type="radio"/>
-                <label>task 1</label>
+                <label>Lorem ipsum dolor sit amet.</label>
               </div>
-              <div>
+              <div className='task-span'>
                 <input type="radio"/>
-                <label>task 1</label>
+                <label>Lorem ipsum dolor sit amet.</label>
               </div>
-              <div>
+              <div className='task-span'>
                 <input type="radio"/>
-                <label>task 1</label>
+                <label>Lorem ipsum dolor sit amet.</label>
               </div>
-              <div>
+              <div className='task-span'>
                 <input type="radio"/>
-                <label>task 1</label>
+                <label>Lorem ipsum dolor sit amet.</label>
               </div>
-              <div>
+              <div className='task-span'>
                 <input type="radio"/>
-                <label>task 1</label>
+                <label>Lorem ipsum dolor sit amet.</label>
               </div>
-              <div>
+              <div className='task-span'>
                 <input type="radio"/>
-                <label>task 1</label>
+                <label>Lorem ipsum dolor sit amet.</label>
               </div>
-              <div>
+              <div className='task-span'>
                 <input type="radio"/>
-                <label>task 1</label>
+                <label>Lorem ipsum dolor sit amet.</label>
               </div>
             </div>
           </div>
