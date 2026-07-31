@@ -19,7 +19,7 @@ function App() {
       {/* <NewUser/> */}
       {/* <Login/> */}
       {/* <Register/> */}
-      {/* <Dashboard /> */}
+      <Dashboard />
       {/* <CreateTask/> */}
       {/* <NotFound/> */}
 

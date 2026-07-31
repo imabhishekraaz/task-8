@@ -12,7 +12,6 @@
     box-sizing: border-box;
     font-size: 15px;
     font-family: var(--primary-font);
-    
 }
 
 @media (width <768px) {
@@ -82,36 +81,5 @@
         .total-task .icon {
             color: white;
         }
-    }
-
-    /* task-wrapper */
-    .task-wrapper {
-        padding: var(--left-padding);
-    }
-    .today p {
-        font-size: 20px;
-        font-family: var(--primary-font);
-        font-weight: 600;
-        color: var(--primary-color);
-        margin-bottom: 10px;
-    }
-    .tasks {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        background-color: var(--background-color);
-        padding: 10px;
-        border-radius: 10px;
-    }
-    .task-span {
-        display: flex;
-        gap: 5px;
-    }
-    .task-span label {
-        color: white;
-        user-select: none;
-    }
-    input[type="radio"]:checked + label {
-        font-weight: bold;
     }
 }

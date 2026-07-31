@@ -2,6 +2,7 @@ import React from 'react'
 import './Dashboard.css'
 import { IonIcon } from '@ionic/react';
 import { atCircleOutline, bagHandleOutline, barbellOutline, ellipseOutline, peopleOutline, personCircle, personOutline, squareOutline } from 'ionicons/icons';
+import TaskDetails from '../TaskDetails/TaskDetails';
 
 const Dashboard = () => {
 
@@ -73,41 +74,7 @@ const Dashboard = () => {
               </div>
             </div>
           </div>
-          <div className='task-wrapper'>
-            <div className='today'>
-              <p>Today</p>
-            </div>
-            <div className='tasks'>
-              <div className='task-span'>
-                <input type="radio"/>
-                <label>Lorem ipsum dolor sit amet.</label>
-              </div>
-              <div className='task-span'>
-                <input type="radio"/>
-                <label>Lorem ipsum dolor sit amet.</label>
-              </div>
-              <div className='task-span'>
-                <input type="radio"/>
-                <label>Lorem ipsum dolor sit amet.</label>
-              </div>
-              <div className='task-span'>
-                <input type="radio"/>
-                <label>Lorem ipsum dolor sit amet.</label>
-              </div>
-              <div className='task-span'>
-                <input type="radio"/>
-                <label>Lorem ipsum dolor sit amet.</label>
-              </div>
-              <div className='task-span'>
-                <input type="radio"/>
-                <label>Lorem ipsum dolor sit amet.</label>
-              </div>
-              <div className='task-span'>
-                <input type="radio"/>
-                <label>Lorem ipsum dolor sit amet.</label>
-              </div>
-            </div>
-          </div>
+          <TaskDetails/>
         </div>
       </div>
     </>

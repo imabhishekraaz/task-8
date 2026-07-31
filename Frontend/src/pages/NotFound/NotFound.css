@@ -18,13 +18,14 @@
         align-items: center;
     }
 
-    @scope (.wrapper) {
+    @scope (.wrapper1) {
         padding: 50px 20px;
         background-color: var(--seconday-color);
         border-radius: 20px;
         display: flex;
         justify-content: center;
         align-items: center;
+        flex-direction: column;
         gap: 10px;
 
         div h1 {
