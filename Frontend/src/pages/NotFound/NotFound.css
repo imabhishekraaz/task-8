@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-font: Arial, Helvetica, sans-serif;
+    --primary-color: hsl(0, 0%, 17%);
+    --seconday-color: rgba(0, 0, 0, 0.1);
+}
+
+@media (width <768px) {
+    .container {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    @scope (.wrapper) {
+        padding: 50px 20px;
+        background-color: var(--seconday-color);
+        border-radius: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+
+        div h1 {
+            font-family: var(--primary-font);
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        div button {
+            padding: 10px 10px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            outline: none;
+            border-radius: 10px;
+            font-family: var(--primary-font);
+            font-weight: 600;
+
+        }
+    }
+}
