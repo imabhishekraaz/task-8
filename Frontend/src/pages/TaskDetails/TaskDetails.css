@@ -42,6 +42,20 @@ body {
     .task-wrapper {
         padding: var(--left-padding);
     }
+    .today {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-right: 10px;
+    }
+    .view-all {
+        font-size: 15px !important;
+        background-color: var(--primary) !important;
+        padding: 5px 10px;
+        border-radius: 20px;
+        color: var(--background) !important;
+        border: 1px solid var(--border);
+    }
 
     /* Heading */
     .today p {
@@ -59,6 +73,9 @@ body {
         background: var(--surface);
         border: 1px solid var(--border);
         padding: 15px;
+        height: 330px;
+        max-height: 330px;
+        overflow: hidden;
         border-radius: 12px;
         box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
     }

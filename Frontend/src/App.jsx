@@ -8,6 +8,8 @@ import CreateTask from './pages/CreateTask/CreateTask'
 import NotFound from './pages/NotFound/NotFound'
 import FloatingMenu from './components/FloatingMenu/FloatingMenu'
 import EditTask from './components/EditTask/EditTask'
+import AllTasks from './pages/AllTasks/AllTasks'
+import TaskDetails from './pages/TaskDetails/TaskDetails'
 
 
 
@@ -17,15 +19,17 @@ function App() {
 
     <>
       <MobileOnlyNotice/>
-      {/* <Navbar /> */}
+      <Navbar />
       <FloatingMenu/>
       {/* <NewUser/> */}
       {/* <Login/> */}
       {/* <Register/> */}
-      {/* <Dashboard /> */}
+      <Dashboard />
       {/* <CreateTask/> */}
       {/* <NotFound/> */}
-      <EditTask/>
+      {/* <EditTask/> */}
+      {/* <AllTasks/> */}
+      {/* <TaskDetails/> */}
 
     </>
   )

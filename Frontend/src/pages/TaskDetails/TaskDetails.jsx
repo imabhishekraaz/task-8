@@ -6,7 +6,12 @@ const TaskDetails = () => {
         <>
             <div className='task-wrapper'>
                 <div className='today'>
-                    <p>Today</p>
+                    <div>
+                        <p>Today</p>
+                    </div>
+                    <div>
+                        <p className='view-all'>View All</p>
+                    </div>
                 </div>
                 <div className='tasks'>
                     <div className='task-span'>

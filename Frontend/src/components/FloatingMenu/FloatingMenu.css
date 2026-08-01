@@ -24,6 +24,7 @@
         position: fixed;
         bottom: 40px;
         right: 30px;
+        z-index: 999;
     }
 
     .icon-2 {
@@ -43,6 +44,7 @@
         animation: openMenu 0.5s alternate;
         bottom: 110px;
         right: 35px;
+        z-index: 999;
     }
 
     @keyframes openMenu {
