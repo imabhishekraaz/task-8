@@ -1,41 +1,62 @@
-:root {
-    --primary-font:Arial, Helvetica, sans-serif;
-    --primary-color:  hsl(0, 0%, 17%);
-    --secondary-color: rgba(0, 0, 0, 0.1);
-    --background-color: hsl(0, 0%, 17%);
-    --left-padding: 20px;
-}
-
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-size: 15px;
-    font-family: var(--primary-font);
+}
+
+:root {
+    /* 60% - Background */
+    --background: hsl(210, 40%, 98%);
+
+    /* 30% - Surface */
+    --surface: hsl(220, 14%, 96%);
+
+    /* 10% - Accent */
+    --primary: hsl(221, 83%, 53%);
+
+    /* Text */
+    --text: hsl(222, 47%, 11%);
+    --text-muted: hsl(215, 16%, 47%);
+
+    /* Border */
+    --border: hsl(214, 32%, 91%);
+
+    /* Status */
+    --success: hsl(142, 71%, 45%);
+    --warning: hsl(38, 92%, 50%);
+    --danger: hsl(0, 84%, 60%);
 }
 
 @media (width <768px) {
+
     .page-wrapper {
         padding-top: 15px;
+        background: linear-gradient(
+            180deg,
+            white,
+            var(--background)
+        );
     }
 
     /* greet-wrapper */
     .greet-wrapper {
         padding-left: var(--left-padding);
     }
+
     /* username-wrapper */
     .username-wrapper h1 {
         font-family: var(--primary-font);
         font-weight: 600;
         font-size: 20px;
-        color: var(--primary-color);
+        color: var(--text);
     }
+
     .date p {
         font-size: 10px;
         font-family: var(--primary-font);
         line-height: 20px;
         font-weight: 600;
-        color: var(--primary-color);
+        color: var(--text-muted);
     }
 
     /* category-wrapper */
@@ -43,10 +64,13 @@
         font-size: 20px;
         font-family: var(--primary-font);
         font-weight: 600;
+        color: var(--text);
     }
+
     .category-wrapper {
         padding: var(--left-padding);
     }
+
     .category-inner-wrapper {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -55,29 +79,34 @@
     }
 
     @scope (.category-inner-wrapper .span) {
-        background-color: var(--background-color);
+
+        background-color: var(--primary);
         border-radius: 10px;
         padding: 10px;
-        box-shadow: -3px 0px 5px black;
-        
+        box-shadow: 0 8px 20px color-mix(in srgb, var(--primary) 30%, transparent);
+
         .icon-wrapper .icon {
             width: 30px;
             height: 30px;
-            /* padding-left: 10px; */
             color: white;
         }
-        p{
+
+        p {
             font-size: 15px;
             color: white;
         }
+
         .time {
             font-size: 10px;
             line-height: 20px;
+            color: white;
         }
+
         .total-task {
             display: flex;
             justify-content: space-between;
         }
+
         .total-task .icon {
             color: white;
         }

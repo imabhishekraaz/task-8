@@ -5,19 +5,32 @@
 }
 
 :root {
+    /* Font */
     --primary-font: Arial, Helvetica, sans-serif;
-    --primary-color: hsl(0, 0%, 17%);
-    --secondary-color: hsla(0, 0%, 0%, 0.102);
+
+    /* 60-30-10 Palette */
+    --background: hsl(210, 40%, 98%);
+    --surface: hsl(220, 14%, 96%);
+    --primary: hsl(221, 83%, 53%);
+
+    /* Text */
+    --text: hsl(222, 47%, 11%);
+    --text-muted: hsl(215, 16%, 47%);
+
+    /* Border */
+    --border: hsl(214, 32%, 91%);
 }
 
-
 @media (width < 768px) {
+
     .mains-wrapper {
         display: flex;
         flex-direction: column;
+        background: var(--background);
+        min-height: 100vh;
     }
 
-    /* Header wrapper */
+    /* Header */
     .header-wrapper {
         margin-top: 50px;
         display: flex;
@@ -28,7 +41,7 @@
 
     .heading-container h1 {
         font-family: var(--primary-font);
-        color: var(--primary-color);
+        color: var(--text);
         font-weight: bold;
         font-size: 35px;
         margin-bottom: 15px;
@@ -41,12 +54,13 @@
     }
 
     .paragraph-container p {
+        width: 70%;
         font-family: var(--primary-font);
         font-weight: bold;
-        color: var(--primary-color);
-        width: 70%;
+        color: var(--text-muted);
     }
 
+    /* Form */
     .form-container {
         display: flex;
         flex-direction: column;
@@ -63,13 +77,21 @@
         width: 73%;
         height: 3.5rem;
         margin-bottom: 20px;
-        outline: none;
-        border: none;
-        background-color: hsla(0, 0%, 0%, 0.102);
         padding-left: 20px;
-        font-size: 15px;
-        font-weight: bold;
+
+        border: 1px solid var(--border);
+        outline: none;
         border-radius: 10px;
+
+        background: var(--surface);
+        color: var(--text);
+
+        font-size: 15px;
+        font-weight: 600;
+    }
+
+    .input-container input::placeholder {
+        color: var(--text-muted);
     }
 
     .signin {
@@ -78,50 +100,54 @@
         align-items: center;
     }
 
-    /* forgot password button */
+    /* Forgot Password */
     .signin a {
         text-align: right;
         padding-left: 135px;
         padding-right: 22px;
         margin-bottom: 30px;
+
         font-family: var(--primary-font);
         font-weight: bold;
         text-decoration: none;
-        color: var(--primary-color);
+        color: var(--primary);
         cursor: pointer;
     }
 
-    /* signing button */
+    /* Sign In Button */
     .signin button {
         width: 73%;
         height: 3.5rem;
+
         border: none;
-        background-color: var(--primary-color);
         border-radius: 10px;
+
+        background: var(--primary);
         color: white;
+
         font-size: 15px;
         font-family: var(--primary-font);
         font-weight: bold;
         cursor: pointer;
     }
 
-    /* create new account button */
+    /* Create Account */
     .new-account {
         display: flex;
-        align-items: center;
         justify-content: center;
+        align-items: center;
         margin: 30px;
     }
 
     .new-account p {
+        margin-top: 20px;
         font-family: var(--primary-font);
         font-weight: bold;
-        color: var(--primary-color);
-        margin-top: 20px;
+        color: var(--text);
         cursor: pointer;
     }
 
-    /* other signin option */
+    /* Other Options */
     .other-option {
         display: flex;
         flex-direction: column;
@@ -130,26 +156,32 @@
     }
 
     .other-option .paragraph p {
-        width: 100%;
+        margin-bottom: 20px;
         font-family: var(--primary-font);
         font-weight: bold;
-        color: var(--primary-color);
-        margin-bottom: 20px;
+        color: var(--text-muted);
     }
 
-    /* google,apple,facebook option icon */
-
+    /* Social Icons */
     .icons {
         display: flex;
         gap: 20px;
     }
 
     .icons .icon {
-        background-color: var(--secondary-color);
-        border-radius: 15px;
         padding: 13px;
-        color: black;
         font-size: 25px;
         cursor: pointer;
+
+        background: var(--surface);
+        color: var(--text);
+
+        border: 1px solid var(--border);
+        border-radius: 15px;
+    }
+
+    .icons .icon:hover {
+        background: var(--primary);
+        color: white;
     }
 }

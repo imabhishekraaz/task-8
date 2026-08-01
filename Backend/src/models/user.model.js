@@ -1,16 +1,21 @@
 const mongoose = require('mongoose');
-const userMiddleware = require('./../middleware/user.middleware')
+const userMiddleware = require('./../middleware/user.middleware');
+const validator = require('validator');
 
-// create a user Scheme for creating a user
+
 const userScheme = new mongoose.Schema({
     name: {
         type: String,
-        required: true
+        required: true,
+        minLength: [2, 'Name length must have greater than 2'],
+        validate: [validator.isAlpha, 'Name should be contains Alphabets']
     },
     password: {
         type: String,
         required: true,
-        
+        minLength: [6, 'Password length must have greater than 6'],
+        maxLength: [20, 'Password length must have less than 20']
+
     },
     email: {
         type: String,
@@ -25,7 +30,13 @@ const userScheme = new mongoose.Schema({
 
 userScheme.pre('save', userMiddleware.hashPassword);
 
-// create a model "user"
+/**
+ * Create  user schema for the user register
+ * @requires { Name , Password , Email}
+ * @param {string} Name User name
+ * @param {string} Password user password
+ * @param {string} Email user Email address
+ */
 const userModel = mongoose.model("user", userScheme);
 module.exports = {
     userModel

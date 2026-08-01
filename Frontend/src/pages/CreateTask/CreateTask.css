@@ -5,21 +5,40 @@
 }
 
 :root {
+    /* Font */
     --primary-font: Arial, Helvetica, sans-serif;
-    --primary-color: hsl(0, 0%, 17%);
-    --secondary-color: rgba(0, 0, 0, 0.1);
+
+    /* 60-30-10 Palette */
+    --background: hsl(210, 40%, 98%);
+    --surface: hsl(220, 14%, 96%);
+    --primary: hsl(221, 83%, 53%);
+
+    /* Text */
+    --text: hsl(222, 47%, 11%);
+    --text-muted: hsl(215, 16%, 47%);
+
+    /* Border */
+    --border: hsl(214, 32%, 91%);
+
+    /* Status */
+    --success: hsl(142, 71%, 45%);
+    --warning: hsl(38, 92%, 50%);
+    --danger: hsl(0, 84%, 60%);
+
+    /* Spacing */
     --left-padding: 20px;
 }
 
 @media (width <768px) {
+
     .wrapper {
         display: flex;
         flex-direction: column;
         height: 100vh;
-        background-color: white;
+        background-color: var(--background);
     }
 
-    /* page-name */
+    /* Page Name */
     @scope (.page-name) {
         display: flex;
         padding: var(--left-padding);
@@ -30,22 +49,25 @@
             font-size: 20px;
             font-family: var(--primary-font);
             font-weight: 600;
+            color: var(--text);
         }
     }
 
-    /* form-container */
+    /* Form */
     @scope (.form-container form) {
         display: flex;
         flex-direction: column;
         gap: 20px;
         margin: 30px;
         padding: 20px;
-        /* background-color: var(--secondary-color); */
-        border-radius: 10px;
-        box-shadow: -4px -2px 9px black;
+        background-color: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 15px;
+        box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
 
         @scope (div) {
-            background-color: var(--secondary-color);
+            background-color: var(--background);
+            border: 1px solid var(--border);
             padding: 10px 20px;
             display: flex;
             flex-direction: column;
@@ -54,46 +76,59 @@
             border-radius: 10px;
 
             label {
-                color: var(--primary-color);
+                color: var(--text);
                 font-weight: 600;
                 font-family: var(--primary-font);
                 width: 100%;
             }
 
             input {
-                display: flex;
                 background: none;
                 width: 100%;
                 border: none;
                 outline: none;
+                color: var(--text);
                 font-family: var(--primary-font);
-                font-weight: 600;
-                text-decoration: none;
+                font-weight: 500;
             }
+
             textarea {
                 background: none;
                 border: none;
                 outline: none;
+                color: var(--text);
+                resize: none;
             }
-            
+
+            input::placeholder,
+            textarea::placeholder {
+                color: var(--text-muted);
+            }
         }
     }
 
-    /* save button */
+    /* Save Button */
     @scope (.save-btn) {
         display: flex;
         justify-content: center;
-        align-items: center; 
-        background: none;       
-        
-        button {
-                background-color: var(--primary-color);
-                color: white;
-                border: none;
-                padding: 15px;
-                width: 80%;
-                border-radius: 25px;
-            }
-    }
+        align-items: center;
+        background: none;
 
+        button {
+            width: 80%;
+            padding: 15px;
+            border: none;
+            border-radius: 25px;
+            background-color: var(--primary);
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            filter: brightness(0.9);
+        }
+    }
 }

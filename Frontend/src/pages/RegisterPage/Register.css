@@ -4,31 +4,46 @@
     box-sizing: border-box;
 }
 
+:root {
+    /* Font */
+    --primary-font: Arial, Helvetica, sans-serif;
+
+    /* 60-30-10 Palette */
+    --background: hsl(210, 40%, 98%);
+    --surface: hsl(220, 14%, 96%);
+    --primary: hsl(221, 83%, 53%);
+
+    /* Text */
+    --text: hsl(222, 47%, 11%);
+    --text-muted: hsl(215, 16%, 47%);
+
+    /* Border */
+    --border: hsl(214, 32%, 91%);
+}
+
 @media (width < 768px) {
 
     .mains-wrapper {
-        --primary-font: Arial, Helvetica, sans-serif;
-        --primary-color: hsl(0, 0%, 17%);
-        --secondary-color: rgba(0, 0, 0, 0.7);
-        --input-color: hsl(0, 0%, 83%);
         font-family: var(--primary-font);
-        color: var(--secondary-color);
+        background: var(--background);
+        color: var(--text);
+        min-height: 100vh;
     }
 
-    /* Header section */
+    /* Header */
+
     .header-wrapper {
         display: flex;
         justify-content: center;
         align-items: center;
         text-align: center;
-        /* Fixed: Added to center text alignment inside container */
         margin-top: 50px;
     }
 
     .create-account h1 {
         font-size: 35px;
         font-weight: bold;
-        color: var(--primary-color);
+        color: var(--text);
         margin-bottom: 10px;
     }
 
@@ -40,11 +55,12 @@
 
     .header-paragraph p {
         width: 80%;
-        font-weight: bold;
-        color: var(--secondary-color);
+        font-weight: 500;
+        color: var(--text-muted);
     }
 
-    /* Sign up form */
+    /* Form */
+
     .form-wrapper {
         display: flex;
         flex-direction: column;
@@ -54,27 +70,33 @@
 
     .form-inner-wrapper {
         display: grid;
-        gap: 20px;
         grid-template-columns: 1fr 1fr;
+        gap: 20px;
+
         width: 73%;
         margin-bottom: 15px;
     }
 
     .form-inner-wrapper input {
         width: 100%;
-        border-radius: 10px;
         height: 3.5rem;
-        border: 2px solid transparent;
-        /* Added: Prevents layout shifting on focus border activation */
-        outline: none;
         padding-left: 10px;
-        background-color: var(--input-color);
-        font-weight: bold;
-        color: var(--secondary-color);
+
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        outline: none;
+
+        background: var(--surface);
+        color: var(--text);
+        font-weight: 600;
+    }
+
+    .form-inner-wrapper input::placeholder {
+        color: var(--text-muted);
     }
 
     .form-inner-wrapper input:focus {
-        border: 2px solid var(--primary-color);
+        border-color: var(--primary);
     }
 
     .option-wrapper {
@@ -85,25 +107,27 @@
     #gender {
         width: 100%;
         padding: 1rem 0.5rem;
-        background-color: var(--input-color);
+
+        background: var(--surface);
+        color: var(--text);
+
+        border: 1px solid var(--border);
         border-radius: 10px;
         outline: none;
         appearance: none;
-        border: 2px solid transparent;
-        /* Added: Prevents layout shifting on focus border activation */
-        font-weight: bold;
-        color: var(--secondary-color);
+        font-weight: 600;
     }
 
     #gender:focus {
-        border: 2px solid var(--primary-color);
+        border-color: var(--primary);
     }
 
     #gender option {
-        background-color: #f2d6d6;
-        /* Fixed: Replaced unrenderable RGBA with solid Hex value */
-        color: black;
+        background: white;
+        color: var(--text);
     }
+
+    /* Email */
 
     .email-wrapper {
         display: flex;
@@ -111,26 +135,33 @@
         justify-content: center;
         align-items: center;
         width: 100%;
-        margin-bottom: 15px;
         gap: 15px;
+        margin-bottom: 15px;
     }
 
     .email-wrapper input {
         width: 73%;
         height: 3.5rem;
         padding-left: 10px;
-        border: 2px solid transparent;
-        /* Added: Prevents layout shifting on focus border activation */
-        outline: none;
-        background-color: var(--input-color);
+
+        border: 1px solid var(--border);
         border-radius: 10px;
-        font-weight: bold;
-        color: var(--secondary-color);
+        outline: none;
+
+        background: var(--surface);
+        color: var(--text);
+        font-weight: 600;
+    }
+
+    .email-wrapper input::placeholder {
+        color: var(--text-muted);
     }
 
     .email-wrapper input:focus {
-        border: 2px solid var(--primary-color);
+        border-color: var(--primary);
     }
+
+    /* Sign Up Button */
 
     .signup-button {
         display: flex;
@@ -141,41 +172,62 @@
 
     .signup-button button {
         width: 73%;
-        background-color: var(--primary-color);
-        font-weight: bold;
-        font-size: 15px;
         height: 3.5rem;
+
         border: none;
-        outline: none;
         border-radius: 10px;
+
+        background: var(--primary);
         color: white;
-        margin-bottom: 40px;
+
+        font-size: 15px;
+        font-weight: 600;
         cursor: pointer;
+
+        margin-bottom: 40px;
+        transition: 0.3s ease;
     }
+
+    .signup-button button:hover {
+        filter: brightness(0.9);
+    }
+
+    /* Already have an account */
 
     .account-button {
         display: flex;
         justify-content: center;
         align-items: center;
-        font-weight: bold;
-        color: var(--primary-color);
+
+        color: var(--primary);
+        font-weight: 600;
         margin-bottom: 30px;
         cursor: pointer;
     }
 
-    /* Google, Apple, Facebook option icons */
+    /* Social Icons */
+
     .icons {
         display: flex;
         gap: 20px;
     }
 
     .icons .icon {
-        background-color: var(--input-color);
-        border-radius: 15px;
         padding: 13px;
-        color: black;
         font-size: 25px;
+
+        background: var(--surface);
+        color: var(--text);
+
+        border: 1px solid var(--border);
+        border-radius: 15px;
+
         cursor: pointer;
-        /* Fixed: Removed duplicate entry */
+        transition: 0.3s ease;
+    }
+
+    .icons .icon:hover {
+        background: var(--primary);
+        color: white;
     }
 }

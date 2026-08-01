@@ -13,10 +13,10 @@ const Navbar = () => {
                     <IonIcon className='icon' icon={menuOutline}/>
                 </div>
                 <div className='page-name'>
-                    <h2>Navbar</h2>
+                    <h2>Dashboard</h2>
                 </div>
-                <div className='icon'>
-                    <IonIcon className='icon icon-2' icon={searchOutline}/>
+                <div className='iconsn'>
+                    <IonIcon className='icon icon-4' icon={searchOutline}/>
                 </div>
             </div>
         </div>
