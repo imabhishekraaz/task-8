@@ -1,13 +1,14 @@
 import axios from 'axios'
 
+const onlineAPI = 'https://to-do-application-poa1.onrender.com';
 // All APIs
-const signupUserAPI = import.meta.env?.VITE_SIGNUP_URL || 'http://localhost:4000/api/user/signup'
-const loginUserAPI = import.meta.env?.VITE_LOGIN_URL || 'http://localhost:4000/api/user/login'
-const verifyTokenAPI = import.meta.env?.VITE_VERIFY_URL || 'http://localhost:4000/api/user/verify'
-const userAllTasksAPI = import.meta.env?.VITE_ALL_TASKS || 'http://localhost:4000/api/user/tasks'
-const deleteUserTaskAPI = import.meta.env?.VITE_DELETE_TASK || 'http://localhost:4000/api/user/task'
-const getUserTaskDetailsAPI = import.meta.env?.VITE_TASK_DETAILS || 'http://localhost:4000/api/user/task'
-const addUserTaskAPI = import.meta.env?.VITE_ADD_TASK || 'http://localhost:4000/api/user/task'
+const signupUserAPI = import.meta.env?.VITE_SIGNUP_URL || `${onlineAPI}/api/user/signup`
+const loginUserAPI = import.meta.env?.VITE_LOGIN_URL || `${onlineAPI}/api/user/login`
+const verifyTokenAPI = import.meta.env?.VITE_VERIFY_URL || `${onlineAPI}/api/user/verify`
+const userAllTasksAPI = import.meta.env?.VITE_ALL_TASKS || `${onlineAPI}/api/user/tasks`
+const deleteUserTaskAPI = import.meta.env?.VITE_DELETE_TASK || `${onlineAPI}/api/user/task`
+const getUserTaskDetailsAPI = import.meta.env?.VITE_TASK_DETAILS || `${onlineAPI}/api/user/task`
+const addUserTaskAPI = import.meta.env?.VITE_ADD_TASK || `${onlineAPI}/api/user/task`
 
 
 /**
