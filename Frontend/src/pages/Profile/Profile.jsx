@@ -5,6 +5,7 @@ import userImage from './../../../public/images.jfif'
 import './Profile.css'
 import { useNavigate } from 'react-router-dom'
 import { handleLogoutButton } from '../../api/api'
+import useDocumentTitle from '../../Hooks/useDocumentTitle'
 
 const Profile = () => {
     const naviagte = useNavigate();
@@ -12,6 +13,9 @@ const Profile = () => {
     const handleLogout = ()=> {
         handleLogoutButton(naviagte);
     }
+
+    useDocumentTitle('Profile')
+    
     return (
         <>
             <div>

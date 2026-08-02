@@ -3,8 +3,11 @@ import './Dashboard.css'
 import { IonIcon } from '@ionic/react';
 import { atCircleOutline, bagHandleOutline, barbellOutline, ellipseOutline, peopleOutline, personCircle, personOutline, squareOutline } from 'ionicons/icons';
 import TaskDetails from '../TaskDetails/TaskDetails';
+import useDocumentTitle from '../../Hooks/useDocumentTitle';
 
 const Dashboard = () => {
+
+  useDocumentTitle('Dashboard')
 
   const today = new Date();
   const month = today.toLocaleString('default', { month: 'long' });

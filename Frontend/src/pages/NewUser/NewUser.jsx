@@ -1,8 +1,11 @@
 import React from 'react';
 import manImage from './../../assets/images/Work-illustration.svg';
 import './NewUser.css';
+import useDocumentTitle from '../../Hooks/useDocumentTitle';
 
 const NewUser = () => {
+
+  useDocumentTitle('Welcome to To-Do App')
   return (
     
     <div className="mains-container">

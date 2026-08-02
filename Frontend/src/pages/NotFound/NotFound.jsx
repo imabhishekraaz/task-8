@@ -1,7 +1,10 @@
 import React from 'react'
 import './NotFound.css'
+import useDocumentTitle from '../../Hooks/useDocumentTitle'
 
 const NotFound = () => {
+
+    useDocumentTitle('Not Found')
   return (
     
     <> 

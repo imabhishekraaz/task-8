@@ -5,6 +5,7 @@ import './AllTasks.css'
 import { Link } from 'react-router-dom'
 import { getUserTasks } from '../../api/api'
 import { deleteUserTask } from '../../api/api'
+import useDocumentTitle from '../../Hooks/useDocumentTitle'
 
 const AllTasks = () => {
 
@@ -16,6 +17,8 @@ const AllTasks = () => {
             setTasks(response.data.userTasks)
         }
     }
+
+    useDocumentTitle('All Tasks')
     useEffect(() => {
         handleUserAllTasks()
     }, [tasks])

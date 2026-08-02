@@ -5,6 +5,7 @@ import { arrowBackOutline, createOutline } from 'ionicons/icons'
 import { Link } from 'react-router-dom'
 import { useParams } from 'react-router-dom'
 import { getUserTaskDetails } from '../../api/api'
+import useDocumentTitle from '../../Hooks/useDocumentTitle'
 
 const EditTask = () => {
   const { id } = useParams()
@@ -16,6 +17,8 @@ const EditTask = () => {
       setTask(response.data.isTaskFound)
     }
   }
+  useDocumentTitle('Edit Task')
+  
   useEffect(() => {
     handleUserTaskDetails()
   }, [])

@@ -4,6 +4,7 @@ import { IonIcon } from '@ionic/react'
 
 import { logoApple, logoFacebook, logoGoogle } from 'ionicons/icons';
 import { signupUser } from '../../api/api';
+import useDocumentTitle from '../../Hooks/useDocumentTitle';
 
 
 
@@ -17,6 +18,7 @@ const Register = () => {
   const [error, setError] = useState();
   const [success, setSuccess] = useState();
 
+  useDocumentTitle('Signup')
 
   const userData = {
     name: name,

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './TaskDetails.css'
 import { Link } from 'react-router-dom'
 import { getUserTasks } from '../../api/api';
+import useDocumentTitle from '../../Hooks/useDocumentTitle';
 
 const TaskDetails = () => {
     const [isLoading, setIsLoading] = useState(true)
@@ -14,6 +15,8 @@ const TaskDetails = () => {
             setIsLoading(false)
         }
     }
+
+    useDocumentTitle('Task details')
     useEffect(() => {
         handleUserTasks()
     }, [])

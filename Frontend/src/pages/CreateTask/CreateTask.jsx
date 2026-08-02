@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react'
 import './CreateTask.css'
 import { Link } from 'react-router-dom'
 import { addUserTask } from '../../api/api'
+import useDocumentTitle from '../../Hooks/useDocumentTitle'
 
 const CreateTask = () => {
     const [error, setError] = useState()
@@ -13,6 +14,8 @@ const CreateTask = () => {
         title: "",
         description: ""
     });
+
+    useDocumentTitle('Add Task')
 
     const taskDetails = {
         title: task.title,

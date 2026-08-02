@@ -5,6 +5,7 @@ import { IonIcon } from '@ionic/react'
 import { logoApple, logoFacebook, logoGoogle } from 'ionicons/icons';
 import { loginUser } from '../../api/api';
 import { useNavigate } from "react-router-dom";
+import useDocumentTitle from '../../Hooks/useDocumentTitle';
 
 
 
@@ -13,6 +14,8 @@ const Login = () => {
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
     const navigate = useNavigate()
+
+    useDocumentTitle('Login');
 
     const userData = {
         email: email,
