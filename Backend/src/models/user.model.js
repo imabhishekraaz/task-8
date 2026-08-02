@@ -8,7 +8,6 @@ const userScheme = new mongoose.Schema({
         type: String,
         required: true,
         minLength: [2, 'Name length must have greater than 2'],
-        validate: [validator.isAlpha, 'Name should be contains Alphabets']
     },
     password: {
         type: String,

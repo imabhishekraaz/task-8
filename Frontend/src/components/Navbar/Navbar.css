@@ -128,10 +128,11 @@
     list-style: none;
 }
 
-.pages-name ul li {
+.pages-name ul li .Link {
     font-size: 18px;
     font-weight: 600;
     color: var(--background);
+    text-decoration: none;
 }
 
 .logout {
@@ -142,10 +143,11 @@
     border-top: 2px solid var(--background);
 }
 .logout div p {
-    color: var(--background);
+    color: red;
     font-size: 15px;
     font-family: var(--primary-font);
     font-weight: 600;
+    cursor: pointer;
 }
 
 .icon-9 {
@@ -154,4 +156,5 @@
     background-color: white;
     padding: 10px;
     border-radius: 100%;
+    cursor: pointer;
 }

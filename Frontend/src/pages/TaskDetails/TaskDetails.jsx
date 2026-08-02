@@ -1,5 +1,6 @@
 import React from 'react'
 import './TaskDetails.css'
+import { Link } from 'react-router-dom'
 
 const TaskDetails = () => {
     return (
@@ -10,7 +11,7 @@ const TaskDetails = () => {
                         <p>Today</p>
                     </div>
                     <div>
-                        <p className='view-all'>View All</p>
+                        <Link  to='/all-tasks' className='view-all'>View All</Link>
                     </div>
                 </div>
                 <div className='tasks'>

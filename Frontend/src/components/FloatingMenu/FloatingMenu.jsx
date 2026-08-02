@@ -3,6 +3,7 @@ import { addOutline, closeOutline, documentTextOutline, layers } from "ionicons/
 import React from 'react'
 import './FloatingMenu.css'
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const FloatingMenu = () => {
 
@@ -23,8 +24,8 @@ const FloatingMenu = () => {
                 { active && (
                     <div>
                         <div className='pop-button'>
-                            <IonIcon className='icon-3' icon={documentTextOutline}/>
-                            <IonIcon className='icon-3' icon={addOutline}/>
+                            <Link to='/all-tasks'> <IonIcon className='icon-3' icon={documentTextOutline}/> </Link>
+                            <Link to='/add-task'> <IonIcon className='icon-3' icon={addOutline}/> </Link>
                         </div>
                     </div>
                 )}

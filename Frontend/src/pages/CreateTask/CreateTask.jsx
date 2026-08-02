@@ -2,6 +2,7 @@ import { IonIcon } from '@ionic/react'
 import { arrowBackOutline } from 'ionicons/icons'
 import React from 'react'
 import './CreateTask.css'
+import { Link } from 'react-router-dom'
 
 const CreateTask = () => {
     return (
@@ -10,7 +11,7 @@ const CreateTask = () => {
                 <div className='wrapper'>
                     <div className='page-name'>
                         <div>
-                            <IonIcon className='icon' icon={arrowBackOutline}/>
+                           <Link to='/'>  <IonIcon className='icon-9' icon={arrowBackOutline}/> </Link>
                         </div>
                         <div>
                             <h1>Add Task</h1>

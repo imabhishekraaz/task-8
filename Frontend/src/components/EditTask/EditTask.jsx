@@ -10,7 +10,7 @@ const EditTask = () => {
         <div>
           <div className='task-name'>
             <div>
-              <IonIcon className='icon-5' icon={arrowBackOutline} />
+              <IonIcon className='icon-9' icon={arrowBackOutline} />
             </div>
             <div>
               <h1>Title Name</h1>
