@@ -38,11 +38,15 @@
         background-color: var(--background);
     }
 
-    /* Page Name */
-    @scope (.page-name) {
+    .page-name {
         display: flex;
         padding: var(--left-padding);
         gap: 30px;
+    }
+
+    /* Page Name */
+    @scope (.page-name) {
+
 
         div .icon,
         div h1 {
@@ -53,8 +57,7 @@
         }
     }
 
-    /* Form */
-    @scope (.form-container form) {
+    .form-container form {
         display: flex;
         flex-direction: column;
         gap: 20px;
@@ -64,8 +67,12 @@
         border: 1px solid var(--border);
         border-radius: 15px;
         box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+    }
 
-        @scope (div) {
+    /* Form */
+    @scope (.form-container form) {
+
+        div {
             background-color: var(--background);
             border: 1px solid var(--border);
             padding: 10px 20px;
@@ -74,6 +81,10 @@
             width: 100%;
             gap: 5px;
             border-radius: 10px;
+        }
+
+        @scope (div) {
+
 
             label {
                 color: var(--text);
@@ -106,6 +117,7 @@
             }
         }
     }
+
     .message {
         display: flex;
         justify-content: center;
@@ -113,6 +125,7 @@
         font-family: var(--primary-font);
         font-weight: 600;
     }
+
     .message-err {
         display: flex;
         justify-content: center;
@@ -121,13 +134,15 @@
         font-weight: 600;
     }
 
-    /* Save Button */
-    @scope (.save-btn) {
+    .save-btn {
         display: flex;
         justify-content: center;
         align-items: center;
         background: none;
+    }
 
+    /* Save Button */
+    @scope (.save-btn) {
         button {
             width: 80%;
             padding: 15px;

@@ -31,11 +31,9 @@
 
     .page-wrapper {
         padding-top: 15px;
-        background: linear-gradient(
-            180deg,
-            white,
-            var(--background)
-        );
+        background: linear-gradient(180deg,
+                white,
+                var(--background));
     }
 
     /* greet-wrapper */
@@ -78,12 +76,14 @@
         margin-top: 10px;
     }
 
-    @scope (.category-inner-wrapper .span) {
-
+    .category-inner-wrapper .span {
         background-color: var(--primary);
         border-radius: 10px;
         padding: 10px;
         box-shadow: 0 8px 20px color-mix(in srgb, var(--primary) 30%, transparent);
+    }
+
+    @scope (.category-inner-wrapper .span) {
 
         .icon-wrapper .icon {
             width: 30px;

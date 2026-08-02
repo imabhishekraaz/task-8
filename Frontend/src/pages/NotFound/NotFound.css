@@ -31,20 +31,21 @@
         background: var(--background);
     }
 
-    @scope (.wrapper1) {
-
+    .wrapper1 {
         padding: 50px 20px;
         background: var(--surface);
         border: 1px solid var(--border);
         border-radius: 20px;
-
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         gap: 15px;
+    }
 
-        box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+    @scope (.wrapper1) {
+
+
 
         div h1 {
             font-family: var(--primary-font);

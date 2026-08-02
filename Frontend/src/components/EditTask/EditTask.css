@@ -19,20 +19,25 @@
 }
 
 @media (width <768px) {
-    @scope (.task-name) {
+    .task-name {
         display: flex;
         gap: 20px;
         padding: 20px;
         align-items: center;
+    }
+
+    @scope (.task-name) {
+
         div .icon-5 {
             font-size: 20px;
         }
+
         div h1 {
             font-size: 20px;
         }
     }
 
-    @scope (.task-details) {
+    .task-details {
         display: flex;
         flex-direction: column;
         padding: 15px 20px;
@@ -42,6 +47,10 @@
         border-radius: 10px;
         background: var(--background);
         box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+    }
+
+    @scope (.task-details) {
+
 
         .title {
             border: 1px solid var(--border);
@@ -50,45 +59,54 @@
             background-color: white;
             box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
         }
+
         .title-2 {
             display: flex;
             justify-content: space-between;
             width: 100%;
             padding-right: 20px;
         }
+
         .title .inner {
             display: flex;
             flex-direction: column;
             gap: 8px;
         }
+
         .title div p {
             font-size: 15px;
             font-family: var(--primary-font);
             font-weight: 600;
             padding-bottom: 5px;
         }
+
         .data {
             color: var(--text-muted);
         }
+
         .icon-6 {
             font-size: 20px;
         }
+
         .decription {
             height: 100px;
             max-height: 100px;
             overflow-y: auto;
-        } 
+        }
     }
+
     .status-wrapper {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 5px;
     }
+
     .options {
         display: flex;
         flex-direction: column;
         width: 100%;
     }
+
     .options select {
         border: none;
         background: none;
