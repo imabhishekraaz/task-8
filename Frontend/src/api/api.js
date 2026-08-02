@@ -6,6 +6,8 @@ const loginUserAPI = import.meta.env?.VITE_LOGIN_URL || 'http://localhost:4000/a
 const verifyTokenAPI = import.meta.env?.VITE_VERIFY_URL || 'http://localhost:4000/api/user/verify'
 const userAllTasksAPI = import.meta.env?.VITE_ALL_TASKS || 'http://localhost:4000/api/user/tasks'
 const deleteUserTaskAPI = import.meta.env?.VITE_DELETE_TASK || 'http://localhost:4000/api/user/task'
+const getUserTaskDetailsAPI = import.meta.env?.VITE_TASK_DETAILS || 'http://localhost:4000/api/user/task'
+const addUserTaskAPI = import.meta.env?.VITE_ADD_TASK || 'http://localhost:4000/api/user/task'
 
 
 /**
@@ -137,7 +139,6 @@ export const getUserTasks = () => {
  * @requires { JWT Token, Task ID}
  * @param {import('mongoose').ObjectId} TaskID - A unique task id
  */
-
 export const deleteUserTask = async (taskId) => {
     const user = JSON.parse(localStorage.getItem('user'));
     try {
@@ -160,5 +161,71 @@ export const deleteUserTask = async (taskId) => {
         }
     }
 }
+
+
+/**
+ * - METHOD - GET,
+ * - Get user task with the TaskId
+ * @requires { JWT Token, Task ID}
+ * @param {import('mongoose').ObjectId} TaskID - A unique task id
+ */
+export const getUserTaskDetails = async (taskId) => {
+    const user = JSON.parse(localStorage.getItem('user'));
+
+    try {
+        const response = await axios.get(`${getUserTaskDetailsAPI}/${taskId}`, {
+            headers: {
+                Authorization: `Bearer ${user.token}`
+            }
+        })
+        return response
+
+    } catch (err) {
+        if (err.response) {
+            console.error("Backend Error Message:", err.response.data);
+            console.error("Status Code:", err.response.status);
+
+        } else if (err.request) {
+            console.error("No response received from backend:", err.request);
+
+        } else {
+            console.error("Error setting up request:", err.message);
+        }
+    }
+}
+
+/**
+ * - METHOD - POST,
+ * - Create a user task 
+ * @requires { JWT Token, Title, description}
+ * @param {string} Title Task's Title
+ * @param {string} description Task's description
+ */
+export const addUserTask = async (taskDetails) => {
+    const user = JSON.parse(localStorage.getItem('user'));
+
+    try {
+        const response = await axios.post(addUserTaskAPI,taskDetails, {
+            headers: {
+                Authorization: `Bearer ${user.token}`
+            }
+        })
+
+        return response
+    } catch (err) {
+        if (err.response) {
+            console.error("Backend Error Message:", err.response.data);
+            console.error("Status Code:", err.response.status);
+
+        } else if (err.request) {
+            console.error("No response received from backend:", err.request);
+
+        } else {
+            console.error("Error setting up request:", err.message);
+        }
+    }
+}
+
+
 
 

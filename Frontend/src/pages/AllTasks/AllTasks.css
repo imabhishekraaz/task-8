@@ -26,7 +26,9 @@
         gap: 20px;
         padding: 20px;
     }
-    .icon-7,h1 {
+
+    .icon-7,
+    h1 {
         font-size: 20px;
         font-family: var(--primary-font);
         font-weight: 600;
@@ -41,95 +43,95 @@
     .delete-icon {
         font-size: 18px;
     }
-    
-.table {
-    width: 100%;
-    border-collapse: collapse;
-    background: var(--background);
-    border-radius: 10px;
-    overflow: hidden;
-    margin-top: 15px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    font-family: Arial, Helvetica, sans-serif;
-}
 
-.table-head {
-    background: var(--primary);
-    color: #fff;
-}
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+        background: var(--background);
+        border-radius: 10px;
+        overflow: hidden;
+        margin-top: 15px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        font-family: Arial, Helvetica, sans-serif;
+    }
 
-.table-head-row {}
+    .table-head {
+        background: var(--primary);
+        color: #fff;
+    }
 
-.table-heading {
-    padding: 16px;
-    text-align: left;
-    font-size: 15px;
-    font-weight: 600;
-}
+    .table-head-row {}
 
-.table-body {}
+    .table-heading {
+        padding: 16px;
+        text-align: left;
+        font-size: 15px;
+        font-weight: 600;
+    }
 
-.table-row {
-    border-bottom: 1px solid #e5e5e5;
-    transition: background 0.3s ease;
-}
+    .table-body {}
 
-.table-row:hover {
-    background: #f8f8f8;
-}
+    .table-row {
+        border-bottom: 1px solid #e5e5e5;
+        transition: background 0.3s ease;
+    }
 
-.table-data {
-    padding: 16px;
-    font-size: 14px;
-    color: #333;
-}
+    .table-row:hover {
+        background: #f8f8f8;
+    }
 
-.table-number {
-    width: 60px;
-    font-weight: 600;
-}
+    .table-data {
+        padding: 16px;
+        font-size: 14px;
+        color: #333;
+    }
 
-.table-task {}
+    .table-number {
+        width: 60px;
+        font-weight: 600;
+    }
 
-.table-status {}
+    .table-task {}
 
-.status {
-    display: inline-block;
-    padding: 5px 12px;
-    border-radius: 20px;
-    font-size: 13px;
-    font-weight: 600;
-}
+    .table-status {}
 
-.pending {
-    background: #fff3cd;
-    color: #856404;
-}
+    .status {
+        display: inline-block;
+        padding: 5px 12px;
+        border-radius: 20px;
+        font-size: 13px;
+        font-weight: 600;
+    }
 
-.completed {
-    background: #d4edda;
-    color: #155724;
-}
+    .pending {
+        background: #fff3cd;
+        color: #856404;
+    }
 
-.progress {
-    background: #d1ecf1;
-    color: #0c5460;
-}
+    .completed {
+        background: #d4edda;
+        color: #155724;
+    }
 
-.table-action {
-    width: 70px;
-    text-align: center;
-}
+    .progress {
+        background: #d1ecf1;
+        color: #0c5460;
+    }
 
-.delete-icon {
-    font-size: 22px;
-    color: #ff4d4d;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
+    .table-action {
+        width: 70px;
+        text-align: center;
+    }
 
-.delete-icon:hover {
-    color: #d60000;
-    transform: scale(1.2);
-}
+    .delete-icon {
+        font-size: 22px;
+        color: #ff4d4d;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .delete-icon:hover {
+        color: #d60000;
+        transform: scale(1.2);
+    }
 }

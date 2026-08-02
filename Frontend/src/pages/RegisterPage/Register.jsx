@@ -41,7 +41,6 @@ const Register = () => {
       }))
 
       setSuccess(res.data?.message)
-      // console.log(res.data)
 
     } catch (err) {
       

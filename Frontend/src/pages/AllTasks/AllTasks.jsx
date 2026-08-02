@@ -8,14 +8,13 @@ import { deleteUserTask } from '../../api/api'
 
 const AllTasks = () => {
 
-    const [tasks, setTasks] = useState([]);
+    const [tasks, setTasks] = useState(false);
 
     const handleUserAllTasks = async () => {
         const response = await getUserTasks()
         if (response.data.success) {
             setTasks(response.data.userTasks)
         }
-        console.log(tasks)
     }
     useEffect(() => {
         handleUserAllTasks()
@@ -46,7 +45,8 @@ const AllTasks = () => {
                                 </thead>
 
                                 <tbody className="table-body">
-                                    {tasks.map((task,index) => (
+                                    { tasks ? 
+                                        tasks.map((task,index) => (
                                         <tr className="table-row" key={task._id}>
                                             <td className="table-data table-number">{index+1}</td>
                                             <td className="table-data table-task">{task.title}</td>
@@ -57,7 +57,12 @@ const AllTasks = () => {
                                                 <IonIcon className="delete-icon" onClick={()=>deleteUserTask(task._id)} icon={trashOutline} />
                                             </td>
                                         </tr>
-                                    ))}
+                                    )) : (
+                                        <div className='fetch'>
+                                            <p>No Task Available</p>
+                                        </div>
+                                    )}
+                                    
                                 </tbody>
                             </table>
                         </div>

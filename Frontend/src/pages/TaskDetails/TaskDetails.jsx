@@ -1,8 +1,23 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './TaskDetails.css'
 import { Link } from 'react-router-dom'
+import { getUserTasks } from '../../api/api';
 
 const TaskDetails = () => {
+    const [isLoading, setIsLoading] = useState(true)
+    const [tasks, setTasks] = useState([]);
+
+    const handleUserTasks = async () => {
+        const response = await getUserTasks();
+        if (response.data.success) {
+            setTasks(response.data.userTasks)
+            setIsLoading(false)
+        }
+    }
+    useEffect(() => {
+        handleUserTasks()
+    }, [])
+
     return (
         <>
             <div className='task-wrapper'>
@@ -11,38 +26,31 @@ const TaskDetails = () => {
                         <p>Today</p>
                     </div>
                     <div>
-                        <Link  to='/all-tasks' className='view-all'>View All</Link>
+                        <Link to='/all-tasks' className='view-all'>View All</Link>
                     </div>
                 </div>
                 <div className='tasks'>
-                    <div className='task-span'>
-                        <input type="radio" />
-                        <label>Lorem ipsum dolor sit amet.</label>
-                    </div>
-                    <div className='task-span'>
-                        <input type="radio" />
-                        <label>Lorem ipsum dolor sit amet.</label>
-                    </div>
-                    <div className='task-span'>
-                        <input type="radio" />
-                        <label>Lorem ipsum dolor sit amet.</label>
-                    </div>
-                    <div className='task-span'>
-                        <input type="radio" />
-                        <label>Lorem ipsum dolor sit amet.</label>
-                    </div>
-                    <div className='task-span'>
-                        <input type="radio" />
-                        <label>Lorem ipsum dolor sit amet.</label>
-                    </div>
-                    <div className='task-span'>
-                        <input type="radio" />
-                        <label>Lorem ipsum dolor sit amet.</label>
-                    </div>
-                    <div className='task-span'>
-                        <input type="radio" />
-                        <label>Lorem ipsum dolor sit amet.</label>
-                    </div>
+                    {isLoading ? (
+                        <div className='fetch'>
+                            <p>Fetching Tasks...</p>
+                        </div>
+                    ) :
+                        tasks ? (
+                            tasks.map((task) => (
+                                <div className='task-span' key={task._id}>
+                                    <input type="radio" />
+                                    <label><Link className='link' to={`/edit-task/${task._id}`}>{task.title}</Link></label>
+                                </div>
+                            ))
+                        )
+                            : (
+                                <div className='fetch'>
+                                    <p>No Task Available</p>
+                                </div>
+                            )
+                    }
+
+
                 </div>
             </div>
         </>

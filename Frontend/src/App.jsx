@@ -38,7 +38,7 @@ function App() {
             <Route path='/all-tasks' element={<AllTasks />} />
             <Route path='/task-details' element={<TaskDetails />} />
             <Route path='/profile' element={<Profile />} />
-            <Route path='/edit-task' element={<EditTask />} />
+            <Route path='/edit-task/:id' element={<EditTask />} />
           </Route>
         </Routes>
       </BrowserRouter>

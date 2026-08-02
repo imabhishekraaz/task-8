@@ -142,3 +142,33 @@ exports.userAllTasks = async (req, res) => {
         })
     }
 }
+
+// get user task
+
+exports.getUserTask = async (req,res) => {
+    const taskId = req.params.id;
+    const userId = req.user.id;
+
+    try {
+        const isTaskFound = await taskModel.findOne({
+            _id : taskId,
+            userId
+        })
+        // Chck user is found in database
+        if(!isTaskFound) {
+            res.status(404).json({
+                success: false,
+                message: 'User not Found'
+            })
+        }
+        return res.status(200).json({
+            success: true,
+            isTaskFound
+        })
+    } catch (err) {
+        return res.status(500).json({
+            success: false,
+            message: err.message
+        })
+    }
+}
