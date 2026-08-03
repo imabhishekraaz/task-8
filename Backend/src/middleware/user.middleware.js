@@ -6,7 +6,7 @@ exports.hashPassword = async function () {
     if (!this.isModified('password')) return;
 
     try {
-        // hashing the password
+        // Hashing the password
         this.password = await bcrypt.hash(this.password, 12);
 
         // catch the error
@@ -42,6 +42,7 @@ exports.comparePassword = async (req, res, next) => {
         const compareUserPassword = await bcrypt.compare(req.body.password, foundUser.password)
 
         next();
+        
     } catch(err) {
         return res.status(500).json({
             success:false,

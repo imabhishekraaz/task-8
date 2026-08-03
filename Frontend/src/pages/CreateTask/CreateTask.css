@@ -1,0 +1,163 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Font */
+    --primary-font: Arial, Helvetica, sans-serif;
+
+    /* 60-30-10 Palette */
+    --background: hsl(210, 40%, 98%);
+    --surface: hsl(220, 14%, 96%);
+    --primary: hsl(221, 83%, 53%);
+
+    /* Text */
+    --text: hsl(222, 47%, 11%);
+    --text-muted: hsl(215, 16%, 47%);
+
+    /* Border */
+    --border: hsl(214, 32%, 91%);
+
+    /* Status */
+    --success: hsl(142, 71%, 45%);
+    --warning: hsl(38, 92%, 50%);
+    --danger: hsl(0, 84%, 60%);
+
+    /* Spacing */
+    --left-padding: 20px;
+}
+
+@media (width <768px) {
+
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        background-color: var(--background);
+    }
+
+    .page-name {
+        display: flex;
+        padding: var(--left-padding);
+        gap: 30px;
+    }
+
+    /* Page Name */
+    @scope (.page-name) {
+
+
+        div .icon,
+        div h1 {
+            font-size: 20px;
+            font-family: var(--primary-font);
+            font-weight: 600;
+            color: var(--text);
+        }
+    }
+
+    .form-container form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        margin: 30px;
+        padding: 20px;
+        background-color: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 15px;
+        box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+    }
+
+    /* Form */
+    @scope (.form-container form) {
+
+        div {
+            background-color: var(--background);
+            border: 1px solid var(--border);
+            padding: 10px 20px;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            gap: 5px;
+            border-radius: 10px;
+        }
+
+        @scope (div) {
+
+
+            label {
+                color: var(--text);
+                font-weight: 600;
+                font-family: var(--primary-font);
+                width: 100%;
+            }
+
+            input {
+                background: none;
+                width: 100%;
+                border: none;
+                outline: none;
+                color: var(--text);
+                font-family: var(--primary-font);
+                font-weight: 500;
+            }
+
+            textarea {
+                background: none;
+                border: none;
+                outline: none;
+                color: var(--text);
+                resize: none;
+            }
+
+            input::placeholder,
+            textarea::placeholder {
+                color: var(--text-muted);
+            }
+        }
+    }
+
+    .message {
+        display: flex;
+        justify-content: center;
+        color: green;
+        font-family: var(--primary-font);
+        font-weight: 600;
+    }
+
+    .message-err {
+        display: flex;
+        justify-content: center;
+        color: red;
+        font-family: var(--primary-font);
+        font-weight: 600;
+    }
+
+    .save-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: none;
+    }
+
+    /* Save Button */
+    @scope (.save-btn) {
+        button {
+            width: 80%;
+            padding: 15px;
+            border: none;
+            border-radius: 25px;
+            background-color: var(--primary);
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            filter: brightness(0.9);
+        }
+    }
+}

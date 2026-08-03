@@ -75,7 +75,9 @@ exports.loginUser = async (req, res) => {
                 message: 'All Fields required'
             })
         }
-        const userFound = await userModel.findOne({ email })
+        const userFound = await userModel
+                                .findOne({ email })
+                               
 
         const isMatch = await bcrypt.compare(password, userFound.password)
 
@@ -85,6 +87,9 @@ exports.loginUser = async (req, res) => {
                 message: 'Email and Password are incorrect'
             });
         }
+        const userDetails =  await userModel
+                                    .findOne({email})
+                                    .select('-password');
 
         // create a token 
         const token = await util.generateToken(userFound);
@@ -92,7 +97,9 @@ exports.loginUser = async (req, res) => {
         return res.status(200).json({
             success: true,
             message: "user login successfully",
+            userDetails,
             token
+            
         })
         
     } catch(err) {

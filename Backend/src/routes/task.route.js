@@ -12,6 +12,7 @@ taskRouter.delete('/user/task/:id', authMiddleware.verifyToken, taskController.d
 
 taskRouter.get('/user/tasks', authMiddleware.verifyToken, taskController.userAllTasks)
 
+taskRouter.get('/user/task/:id',authMiddleware.verifyToken, taskController.getUserTask)
 
 module.exports = {
     taskRouter

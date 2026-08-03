@@ -1,0 +1,137 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Font */
+    --primary-font: Arial, Helvetica, sans-serif;
+
+    --background: hsl(210, 40%, 98%);
+    --surface: hsl(220, 14%, 96%);
+    --primary: hsl(221, 83%, 53%);
+
+    --text: hsl(222, 47%, 11%);
+    --text-muted: hsl(215, 16%, 47%);
+
+    --border: hsl(214, 32%, 91%);
+}
+
+
+@media (max-width: 768px) {
+
+    .heading {
+        display: flex;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .icon-7,
+    h1 {
+        font-size: 20px;
+        font-family: var(--primary-font);
+        font-weight: 600;
+    }
+
+    .table-heading,
+    .table-data {
+        padding: 12px;
+        font-size: 13px;
+    }
+
+    .delete-icon {
+        font-size: 18px;
+    }
+
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+        background: var(--background);
+        border-radius: 10px;
+        overflow: hidden;
+        margin-top: 15px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .table-head {
+        background: var(--primary);
+        color: #fff;
+    }
+
+    .table-head-row {}
+
+    .table-heading {
+        padding: 16px;
+        text-align: left;
+        font-size: 15px;
+        font-weight: 600;
+    }
+
+    .table-body {}
+
+    .table-row {
+        border-bottom: 1px solid #e5e5e5;
+        transition: background 0.3s ease;
+    }
+
+    .table-row:hover {
+        background: #f8f8f8;
+    }
+
+    .table-data {
+        padding: 16px;
+        font-size: 14px;
+        color: #333;
+    }
+
+    .table-number {
+        width: 60px;
+        font-weight: 600;
+    }
+
+    .table-task {}
+
+    .table-status {}
+
+    .status {
+        display: inline-block;
+        padding: 5px 12px;
+        border-radius: 20px;
+        font-size: 13px;
+        font-weight: 600;
+    }
+
+    .pending {
+        background: #fff3cd;
+        color: #856404;
+    }
+
+    .completed {
+        background: #d4edda;
+        color: #155724;
+    }
+
+    .progress {
+        background: #d1ecf1;
+        color: #0c5460;
+    }
+
+    .table-action {
+        width: 70px;
+        text-align: center;
+    }
+
+    .delete-icon {
+        font-size: 22px;
+        color: #ff4d4d;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .delete-icon:hover {
+        color: #d60000;
+        transform: scale(1.2);
+    }
+}
