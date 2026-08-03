@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const onlineAPI = 'https://to-do-application-poa1.onrender.com';
+const onlineAPI = 'https://to-do-application-poa1.onrender.com'; 
 // All APIs
 const signupUserAPI = import.meta.env?.VITE_SIGNUP_URL || `${onlineAPI}/api/user/signup`
 const loginUserAPI = import.meta.env?.VITE_LOGIN_URL || `${onlineAPI}/api/user/login`
