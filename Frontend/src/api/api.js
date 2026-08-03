@@ -1,16 +1,5 @@
 import axios from 'axios'
 
-const onlineAPI = 'https://to-do-application-poa1.onrender.com'; 
-// All APIs
-const signupUserAPI = import.meta.env?.VITE_SIGNUP_URL || `${onlineAPI}/api/user/signup`
-const loginUserAPI = import.meta.env?.VITE_LOGIN_URL || `${onlineAPI}/api/user/login`
-const verifyTokenAPI = import.meta.env?.VITE_VERIFY_URL || `${onlineAPI}/api/user/verify`
-const userAllTasksAPI = import.meta.env?.VITE_ALL_TASKS || `${onlineAPI}/api/user/tasks`
-const deleteUserTaskAPI = import.meta.env?.VITE_DELETE_TASK || `${onlineAPI}/api/user/task`
-const getUserTaskDetailsAPI = import.meta.env?.VITE_TASK_DETAILS || `${onlineAPI}/api/user/task`
-const addUserTaskAPI = import.meta.env?.VITE_ADD_TASK || `${onlineAPI}/api/user/task`
-
-
 /**
  * - METHOD - POST,
  * - signup the user with Name,Email,Password and gender
@@ -21,6 +10,7 @@ const addUserTaskAPI = import.meta.env?.VITE_ADD_TASK || `${onlineAPI}/api/user/
  * @param {string} Gender - user gender 
  */
 export const signupUser = async (userData) => {
+    const signupUserAPI = import.meta.env?.VITE_SIGNUP_URL
 
     try {
         const response = await axios.post(signupUserAPI, userData);
@@ -47,6 +37,8 @@ export const signupUser = async (userData) => {
  */
 export const loginUser = async (userData) => {
 
+    const loginUserAPI = import.meta.env?.VITE_LOGIN_URL;
+
     try {
         const response = await axios.post(loginUserAPI, userData);
         return response;
@@ -72,6 +64,7 @@ export const loginUser = async (userData) => {
  * @requires { JWT Token}
  */
 export const verifyToken = async () => {
+    const verifyTokenAPI = import.meta.env?.VITE_VERIFY_URL
     try {
         // Get user details from the localstorage
         const user = JSON.parse(localStorage.getItem('user'));
@@ -111,6 +104,7 @@ export const handleLogoutButton = (navigate) => {
  */
 export const getUserTasks = () => {
     const user = JSON.parse(localStorage.getItem('user'));
+    const userAllTasksAPI = import.meta.env?.VITE_ALL_TASKS
     try {
         const response = axios.get(userAllTasksAPI, {
             headers: {
@@ -141,6 +135,7 @@ export const getUserTasks = () => {
  * @param {import('mongoose').ObjectId} TaskID - A unique task id
  */
 export const deleteUserTask = async (taskId) => {
+    const deleteUserTaskAPI = import.meta.env?.VITE_DELETE_TASK
     const user = JSON.parse(localStorage.getItem('user'));
     try {
         const response = await axios.delete(`${deleteUserTaskAPI}/${taskId}`, {
@@ -171,6 +166,7 @@ export const deleteUserTask = async (taskId) => {
  * @param {import('mongoose').ObjectId} TaskID - A unique task id
  */
 export const getUserTaskDetails = async (taskId) => {
+    const getUserTaskDetailsAPI = import.meta.env?.VITE_TASK_DETAILS
     const user = JSON.parse(localStorage.getItem('user'));
 
     try {
@@ -203,10 +199,11 @@ export const getUserTaskDetails = async (taskId) => {
  * @param {string} description Task's description
  */
 export const addUserTask = async (taskDetails) => {
+    const addUserTaskAPI = import.meta.env?.VITE_ADD_TASK
     const user = JSON.parse(localStorage.getItem('user'));
 
     try {
-        const response = await axios.post(addUserTaskAPI,taskDetails, {
+        const response = await axios.post(addUserTaskAPI, taskDetails, {
             headers: {
                 Authorization: `Bearer ${user.token}`
             }
